@@ -1,0 +1,3 @@
+[submodule "styleterrain-ada-pytorch"]
+	path = styleterrain-ada-pytorch
+	url = https://github.com/kevinsadi/styleterrain-ada-pytorch.git
