@@ -29,3 +29,8 @@ Data for the project has been collected using Google Earth Engine. Below are sni
 
 # Google Colab Files
 [SG2TERRAIN Google Colab](https://colab.research.google.com/drive/1Za6B0U355xvsaDbwVgnCDN9UVPHliNFw?usp=sharing)
+
+# StyleGAN2
+
+https://user-images.githubusercontent.com/34428034/221030059-efa8086f-7d0d-4051-a426-7f750e1e50e0.mp4
+
