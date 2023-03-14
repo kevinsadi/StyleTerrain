@@ -9,8 +9,8 @@ This setup was inspired by Judy Hoffman's notes for setting up conda environment
 environment that uses 3 anyways.
 2. Open the terminal
     (a) On Windows: open the installed Conda prompt to run the command.
-1. Navigate to the folder "proj3_configs" where you have the conda configuration files.
+1. Navigate to the folder "configs" where you have the conda configuration files.
 2. Create the conda environment for this project
-    (a) On Windows: conda env create -f proj3_env_win.yml
+    (a) On Windows: conda env create -f win_env.yml
 3. Activate the newly created environment: use the command `conda activate research`
 4. Use the command `python crop_data.py`

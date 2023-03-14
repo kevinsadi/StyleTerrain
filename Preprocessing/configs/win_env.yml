@@ -10,3 +10,4 @@ dependencies:
 - pyyaml
 - scipy=1.5.2
 - pillow
+- numpy
