@@ -7,8 +7,8 @@ from PIL import Image
 
 ################ FILE SETTINGS #########################
 
-input_data_folder = "output/npy_files"
-input_image_name = 'elevation_00000000.npy'
+input_data_folder = "input"
+input_image_name = 'fakes000352.npy'
 
 output_data_folder = "output/split_files"
 
