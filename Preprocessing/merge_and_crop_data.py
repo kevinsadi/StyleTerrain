@@ -14,8 +14,11 @@ output_dir = 'output/npy_files'
 
 ################ REST OF THE COE ######################
 
+"""
 # This file takes in two images with the same width and height
 # it then crops the data into a dimension requested, but also combines the images to create images with more than 3 channels
+# This is used to take elevation data and rgb satellite data taken from the same region and create trainable .npy files from it
+"""
 
 # combine images
 
