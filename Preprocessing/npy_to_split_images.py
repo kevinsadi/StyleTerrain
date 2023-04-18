@@ -9,9 +9,9 @@ import sys
 ################ FILE SETTINGS #########################
 
 # THIS IS THE FOLDER THAT CONTAINS ALL THE FILES YOU WANT TO CONVERT
-input_data_folder = "G:\My Drive\styleterrain\styleterrain-ada-pytorch\output\images\stitch"
+input_data_folder = "G:\My Drive\styleterrain\styleterrain-ada-pytorch\output\images\swap"
 
-output_data_folder = "output/rotate"
+output_data_folder = "output/stich"
 
 ################ REST OF THE CODE ######################
 
