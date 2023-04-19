@@ -36,18 +36,28 @@ def stack_images_horizontally_no_overlap(elevation_images, rgb_images):
 def stack_two_images_horizontally_with_overlap(elevation_images, rgb_images):
     midpoint = elevation_images[0].size[1] // 2
 
-    elevation_left_image = np.asarray(elevation_images[0])[:, :midpoint]
-    elevation_right_image = np.asarray(elevation_images[1])[:, midpoint:]
-    rgb_left_image = np.asarray(rgb_images[0])[:, :midpoint]
-    rgb_right_image = np.asarray(rgb_images[1])[:, midpoint:]
+    old_elevation_left_image = np.asarray(elevation_images[0])[:, :midpoint]
+    new_elevation_right_image = np.asarray(elevation_images[1])[:, midpoint:]
+    old_rgb_left_image = np.asarray(rgb_images[0])[:, :midpoint]
+    new_rgb_right_image = np.asarray(rgb_images[1])[:, midpoint:]
     
-    np_elevation_imgs = np.hstack((elevation_left_image, elevation_right_image))
+    old_elevation_right_image = np.asarray(elevation_images[0])[:, midpoint:]
+    new_elevation_left_image = np.asarray(elevation_images[1])[:, :midpoint]
+    old_rgb_right_image = np.asarray(rgb_images[0])[:, midpoint:]
+    new_rgb_left_image = np.asarray(rgb_images[1])[:, :midpoint]
+    
+    elevation_merged_image = ((old_elevation_right_image + new_elevation_left_image) / 2).astype(np.uint8)
+    rgb_merged_image = ((old_rgb_right_image + new_rgb_left_image) / 2).astype(np.uint8)
+    
+    np_elevation_imgs = np.hstack((old_elevation_left_image, elevation_merged_image, new_elevation_right_image))
+    np_rgb_imgs = np.hstack((old_rgb_left_image, rgb_merged_image, new_rgb_right_image))
+    
+    print(elevation_merged_image.shape)
+    print(old_elevation_left_image.shape)
 
-    np_rgb_imgs = np.hstack((rgb_left_image, rgb_right_image))
-    
     os.makedirs(output_data_folder, exist_ok=True)
 
-    elevation_imgs_comb = Image.fromarray(np_elevation_imgs)
+    elevation_imgs_comb = Image.fromarray(np_elevation_imgs).convert("L")
     elevation_imgs_comb.save(os.path.join(output_data_folder, 'elevations_tiled.png'))   
 
     rgb_imgs_comb = Image.fromarray(np_rgb_imgs)
